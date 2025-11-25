@@ -16,15 +16,41 @@
 </head>
 
 <style>
+      .product-container {
+    max-width: 700px;
+    margin: 40px auto;
+    text-align: center;
+    padding: 20px;
+}
+
+.product-container img {
+    width: 70%;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.product-title {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+.price {
+    font-size: 18px;
+    margin-bottom: 20px;}
+
+    .description-section {
+    margin-top: 40px;
+    text-align: left;
+    line-height: 1.7;
+}
 .add-to-cart {
-        padding: 10px 20px;
-        background-color: #28a745;
-        border: none;
-        border-radius: 5px;
-        color: white;
-        cursor: pointer;
-        font-size: 16px;
-        margin-top: 10px;
+    background-color: #27ae60;
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
     }
 
     .add-to-cart:hover {
@@ -87,23 +113,27 @@ h1, h2 {
 
 
 <body>
-    <h1>Airpod Max</h1>
-    <img src="ap max.jpg" width="200">
-    <p><strong>Price:</strong> Starting from $599.99</p>
+   <div class="product-container">
+
+    <img src="ap max.jpg" alt="Airpod Max">
+
+    <h1 class="product-title">Airpod Max</h1>
+
+    <p class="price"><strong>Price:</strong> Starting from $599.99</p>
+
     <button class="add-to-cart">Add to Cart</button>
-  
-    <h2>Description</h2>
+    
+    <div class="description-section">
+        <h2>Description</h2>
+        <p>This is a high-quality product with great features. It is perfect for everyday use and offers excellent value.</p>
 
-<p>
-This is a high-quality product with great features.
-It is perfect for everyday use and offers excellent value.
-</p>
+        <ul>
+            <li>High quality</li>
+            <li>Durable material</li>
+            <li>Fast shipping</li>
+        </ul>
+    </div>
 
-<ul>
-    <li>High quality</li>
-    <li>Durable material</li>
-    <li>Fast shipping</li>
-</ul>
 
 
     <a href="index.html">Back to Home</a>
