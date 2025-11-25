@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <meta charset="UTF-8">
+    <title>Products</title>
+    <nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="cart.html">Cart</a>
+     <a href="about.html">About us</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+    <style>
+        body {
+            background-color: #f8f8f8;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        
+
+        .products-container {
+    display: flex;
+    gap: 25px;
+    margin-top: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+    padding: 0 20px;
+}
+
+.product-card {
+    width: 220px;
+    padding: 15px;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.08);
+    text-align: left;
+}
+
+.product-card img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.product-card h3 {
+    margin: 10px 0 5px 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.product-card p {
+    margin: 0;
+    font-size: 16px;
+    color: #555;
+}
+
+   .navbar {
+    background-color: white;
+    padding: 15px 30px;
+    display: flex;
+    gap: 30px;
+    border-bottom: 1px solid #ddd;
+}
+
+.navbar a {
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.navbar a:hover {
+    color: #000;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #333;
+    font-weight: 600;
+    margin-top: 40px;
+}
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.product-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+    </style>
+</head>
+
+<body>
+    <h1 style="text-align:center; margin-top:40px;">New Series</h1>
+
+    <div class="products-container">
+
+   <a href="iPhone 16.html" class="product-link reveal">
+<div class="product-card">
+    <img src="i16.jpg" alt="iPhone 16">
+    <h3>Series 16</h3>
+    <p>Price: From $899.99</p> 
+</div>
+</a>
+
+<a href="iPhone 15.html" class="product-link reveal">
+<div class="product-card">
+    <img src="i15.jpg" alt="iPhone 15">
+    <h3>Series 15</h3>
+    <p>Price: From $799.99</p>
+</div>
+</a>
+
+<a href="iPhone 17.html" class="product-link reveal">
+<div class="product-card">
+    <img src="i17.png" alt="iPhone 17">
+    <h3>Series 17</h3>
+    <p>Price: From $999.99</p>
+    
+</div>
+</a>
+
+<a href="ap max.html" class="product-link reveal">
+<div class="product-card">
+    <img src="ap max.jpg" alt="Airpod Max">
+    <h3>Airpod Max</h3>
+    <p>Price: From $599.99</p>
+    
+</div>
+    
+
+  <script>
+    const cards = document.querySelectorAll(".product-card");
+
+    cards.forEach((card, index) => {
+        setTimeout(() => {
+            card.classList.add("show");
+        }, index * 200);
+    });
+</script>
+
+<script>
+    function revealOnScroll() {
+        const elements = document.querySelectorAll('.reveal');
+
+        elements.forEach(el => {
+            const position = el.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+
+            if (position < windowHeight - 100) {
+                el.classList.add('active');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+</script>
+
+
+</body>
+</html>

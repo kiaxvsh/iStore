@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <meta charset="UTF-8">
+    <title>Shopping Cart</title>
+
+    <style>
+        body {
+    background-color: #f8f8f8;
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0px;
+}
+
+#cart-items {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+}
+
+.cart-item img {
+    width: 110px;
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.cart-item h3 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.cart-item p {
+    margin: 0;
+    color: #555;
+    font-size: 16px;
+}
+
+.remove-btn {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-left: auto;
+}
+
+.remove-btn:hover {
+    background-color: #e60000;
+}
+
+
+  .navbar {
+    background-color: white;
+    padding: 15px 30px;
+    display: flex;
+    gap: 30px;
+    border-bottom: 1px solid #ddd;
+}
+
+.navbar a {
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.navbar a:hover {
+    color: #000;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #333;
+    font-weight: 600;
+    margin-top: 40px;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+.product-link {
+    text-decoration: none;
+    color: inherit;
+}
+    </style>
+</head>
+
+<nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="cart.html">Cart</a>
+     <a href="about.html">About us</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+
+<body>
+    <h1>Your Cart</h1>
+
+    <div id="cart-items">
+    <a href="cart-items" class="reveal">
+    </div>
+    </a>
+    
+    <h2 id="total-price"></h2>
+
+    <div id="cart-items" class="reveal">
+
+    <a href="index.html">Back to Home</a>
+
+    <script src="cart.js"></script>
+    <script>
+    function revealOnScroll() {
+        const elements = document.querySelectorAll('.reveal');
+
+        elements.forEach(el => {
+            const position = el.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+
+            if (position < windowHeight - 100) {
+                el.classList.add('active');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+</script>
+
+</body>
+</html>

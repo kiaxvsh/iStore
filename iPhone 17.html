@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>iPhone 17</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <style>
+    body {
+        font-family: 'Inter', sans-serif;
+        background-color: #f8f8f8;
+        margin: 0;
+        padding: 0;
+    }
+</style>
+
+</head>
+<style>
+.add-to-cart {
+        padding: 10px 20px;
+        background-color: #28a745;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        cursor: pointer;
+        font-size: 16px;
+        margin-top: 10px;
+    }
+
+    .add-to-cart:hover {
+        background-color: #218838;
+    }
+
+
+    .product-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.navbar {
+    background-color: white;
+    padding: 15px 30px;
+    display: flex;
+    gap: 30px;
+    border-bottom: 1px solid #ddd;
+}
+
+.navbar a {
+    color: #333;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.navbar a:hover {
+    color: #000;
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+h1, h2 {
+    text-align: center;
+    color: #333;
+    font-weight: 600;
+    margin-top: 40px;
+}
+
+</style>
+
+<nav class="navbar">
+    <a href="index.html">Home</a>
+    <a href="products.html">Products</a>
+    <a href="cart.html">Cart</a>
+     <a href="about.html">About us</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+
+<body>
+    <h1>Series 17</h1>
+    <img src="i17.png" width="200">
+    <p><strong>Price:</strong> Starting from $999.99</p>
+    <button class="add-to-cart">Add to Cart</button>
+
+    <h2>Description</h2>
+<p>
+This is a high-quality product with great features.
+It is perfect for everyday use and offers excellent value.
+</p>
+
+<ul>
+    <li>High quality</li>
+    <li>Durable material</li>
+    <li>Fast shipping</li>
+</ul>
+
+
+    <a href="index.html">Back to Home</a>
+    <script>
+    document.querySelector('.add-to-cart').addEventListener('click', function() {
+
+        // ساخت یک شیء محصول
+        const product = {
+            name: 'iPhone 17',
+            price: 999.99,
+            image: 'i17.png'
+        };
+
+        // گرفتن سبد قبلی از localStorage (اگر وجود داشته باشد)
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // اضافه کردن محصول جدید
+        cart.push(product);
+
+        // ذخیره دوباره سبد
+        localStorage.setItem('cart', JSON.stringify(cart));
+
+        alert('Product added to cart!');
+    });
+</script>
+<script>
+    function revealOnScroll() {
+        const elements = document.querySelectorAll('.reveal');
+
+        elements.forEach(el => {
+            const position = el.getBoundingClientRect().top;
+            const windowHeight = window.innerHeight;
+
+            if (position < windowHeight - 100) {
+                el.classList.add('active');
+            }
+        });
+    }
+
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+</script>
+
+</body>
+</html>
